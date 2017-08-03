@@ -6,7 +6,7 @@ This repository contains an introductory sample project for [Microsoft Azure Ser
 
 1. [Set up your development environment](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started) with [Visual Studio 2017](https://www.visualstudio.com/vs/). Make sure you have at least version **15.1** of Visual Studio 2017 installed.
 
-This sample application can be built and deployed immediately using Visual Studio 2017. When opening Visual Studio, right click on the application image to "Run as an Administrator".
+This sample application can be built and deployed immediately using Visual Studio 2017. When opening Visual Studio, right click on the application image to "Run as Administrator".
 To deploy on the local cluster, you can simply hit F5 to debug the sample. If you'd like to try publishing the sample to an Azure cluster:
 
 1. Right-click on the application project in Solution Explorer and choose Publish.
