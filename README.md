@@ -1,8 +1,21 @@
+---
+services: service-fabric
+platforms: dotnet
+author: cakreb
+---
+
 # Service Fabric Retail Sample Application - Cookie Cache
 
 This repository contains an introductory sample project for [Microsoft Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) highlighting the use of Reliable Collections. The sample project contains a single application with two services (one stateful and one stateless) demonstrating the basic concepts needed to get you started building highly-available, scalable, distributed applications.
-## Scenarios
+
+## About this sample application
 Cookie Cache is a sample retail application developed using Azure Service Fabric that demonstrates the features Service Fabric offers and showcases their uses. The sample retail application will allow customers to place and purchase orders to demonstrate the ease and benefits of using Service Fabric to create a web application. Cookie Cache will be an example of how ecommerce web applications can look when built on Service Fabric. Since it is easier to build out a retail application that has a specific purpose, this sample will be for an arbitrary company that will sell cookies. The company name is “Cookie Cache”. 
+### Web Service
+This is a stateless front-end web service using [ASP.NET Core in a Reliable Service](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-aspnetcore). This service demonstrates a basic front-end service that acts as a gateway for users into your application. It presents a multi-page application UI and an HTTP API to interact with the rest of the application. This is the only service that exposes an endpoint to the Internet for users to interact with, and all user ingress to the application comes through this service.
+#### Key concepts
+ - Stateless public-facing ASP.NET Core service using WebListener
+ - Communicating with other services in a variety of ways:
+ - Over HTTP to another service using the Service Fabric Reverse Proxy
 
 ## Building and deploying
 
