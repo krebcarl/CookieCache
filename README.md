@@ -24,12 +24,11 @@ This is a stateful back-end service using ASP.NET Core. This service demonstrate
 #### Key concepts
  - Stateful internal-only ASP.NET Core service using Kestrel
  - Reliable Collections
- - Service partitioning
  - Dependency injection of IReliableStateManager for use in MVC controllers
 
 ## Building and deploying
 
-1. [Set up your development environment](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started) with [Visual Studio 2017](https://www.visualstudio.com/vs/). Make sure you have at least version **15.1** of Visual Studio 2017 installed.
+[Set up your development environment](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started) with [Visual Studio 2017](https://www.visualstudio.com/vs/). Make sure you have at least version **15.1** of Visual Studio 2017 installed.
 
 This sample application can be built and deployed immediately using Visual Studio 2017. When opening Visual Studio, right click on the application image to "Run as Administrator". When Visual Studio is open, locate and click on File -> Open -> Project/Solution.. (Ctrl + Shift + O) and locate the sample application folder. To open the project, double click on the file with the .sln ending. The application is ready to be ran locally by clicking on the Start button with the green arrow at the top of the page.
 
