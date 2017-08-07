@@ -1,5 +1,5 @@
-# CookieCache
-Service Fabric Retail Example Sample Application
+# Service Fabric Retail Sample Application - Cookie Cache
+
 This repository contains an introductory sample project for [Microsoft Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) highlighting the use of Reliable Collections. The sample project contains a single application with two services (one stateful and one stateless) demonstrating the basic concepts needed to get you started building highly-available, scalable, distributed applications.
 ## Scenarios
 Cookie Cache is a sample retail application developed using Azure Service Fabric that demonstrates the features Service Fabric offers and showcases their uses. The sample retail application will allow customers to place and purchase orders to demonstrate the ease and benefits of using Service Fabric to create a web application. Cookie Cache will be an example of how ecommerce web applications can look when built on Service Fabric. Since it is easier to build out a retail application that has a specific purpose, this sample will be for an arbitrary company that will sell cookies. The company name is “Cookie Cache”. 
