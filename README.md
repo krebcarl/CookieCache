@@ -1,3 +1,4 @@
+
 ---
 services: service-fabric
 platforms: dotnet
@@ -16,6 +17,15 @@ This is a stateless front-end web service using [ASP.NET Core in a Reliable Serv
  - Stateless public-facing ASP.NET Core service using WebListener
  - Communicating with other services in a variety of ways:
  - Over HTTP to another service using the Service Fabric Reverse Proxy
+ 
+### Stateful Backend Service
+This is a stateful back-end service using ASP.NET Core. This service demonstrates the use of [Reliable Collections](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-reliable-collections) in a stateful service. It presents an internal-only HTTP API for other services to interact with.
+
+#### Key concepts
+ - Stateful internal-only ASP.NET Core service using Kestrel
+ - Reliable Collections
+ - Service partitioning
+ - Dependency injection of IReliableStateManager for use in MVC controllers
 
 ## Building and deploying
 
@@ -41,3 +51,6 @@ After you have opened the project in Visual Studio, on the
 Reading List
 Application Architechure
 Implementing a new additional feature
+
+---
+*This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.*
