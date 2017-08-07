@@ -1,0 +1,164 @@
+﻿
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: relative;
+}
+
+th, td{
+    padding: 15px;
+    color: #034f84;
+}
+
+div {
+    border: 2px;
+    border-radius: 3px;
+    margin: 0 auto 60 auto;
+    padding: 10px;
+    width: 980;
+}
+
+.mainHeadings{
+    font-weight: bold;
+    font-size: medium;
+    color: salmon;
+
+}
+
+image{
+    width: 10px;
+    height: 10px;
+}
+
+h2{
+    color: #98DDDE;
+}
+
+/*BASIC DIV ELEMENT.*/
+
+/*LINKS.*/
+a {
+    color: #545454;
+    font-family: lucida grande, lucida sans, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+    a:hover, a:active {
+        color: #98ddde;
+    }
+/*LINKS.*/
+
+ /*NAV BAR*/
+    a.nav:link {
+        background-color: #D7C5CC;
+        color: #191919;
+        display: block;
+        padding: 15px;
+        text-align: center;
+        
+    }
+
+    a.nav:hover {
+        color: #191919;
+        background-color: #98ddde;
+    }
+
+    a.nav{
+        display: block;
+        padding: 8px;
+        background-color: #dddddd;
+    }
+
+    li.navbar {
+        float: left;
+    }
+
+    ul.navbar {
+        margin: 0 auto 0 auto;
+        padding: 0;
+        overflow: hidden;
+        list-style-type: none;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    ul.navbar li:first-child a {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    ul.navbar li:last-child a {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+/*NAV BAR*/
+
+
+
+
+
+
+/*the following underneath this is a pre determined style*/
+
+
+	html, body
+	{
+		height: 100%;
+        margin: 20px;
+        padding: 40px;
+	}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #F6F4F3;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+    color: #4E4D4D;
+}
+	
+	
+	h1, h2, h3
+	{
+		margin: 0;
+		padding: 0;
+	}
+	
+	p, ol, ul
+	{
+		margin-top: 0;
+	}
+	
+	ol, ul
+	{
+		padding: 0;
+		list-style: none;
+	}
+	
+	p
+	{
+		line-height: 180%;
+	}
+	
+
+	
+	a
+	{
+		color: #383838;
+	}
+	
+	a:hover
+	{
+		text-decoration: none;
+	}
+	
+	.container
+	{
+		width: 1200px;
+		margin: 0px auto;
+	}
+
+
