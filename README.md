@@ -1,4 +1,3 @@
-
 ---
 services: service-fabric
 platforms: dotnet
