@@ -1,3 +1,4 @@
+
 ---
 services: service-fabric
 platforms: dotnet
@@ -37,8 +38,12 @@ To deploy on the local cluster, you can simply hit F5 to debug the sample. If yo
 3. Choose the cluster you'd like to deploy to.
 
 ## Other useful resources
+ 
+ - Reading List
+ - Application Architecture
+ - Implementing a new additional feature
  *Reading List
- *Application Architechure
+ *Application Architecture
  *Implementing a new additional feature
 
 ---
