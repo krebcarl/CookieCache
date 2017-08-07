@@ -46,9 +46,9 @@ After you have opened the project in Visual Studio, on the
 
 
 ## Other useful resources
-Reading List
-Application Architechure
-Implementing a new additional feature
+-Reading List
+-Application Architechure
+-Implementing a new additional feature
 
 ---
 *This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.*
