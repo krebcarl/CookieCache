@@ -15,14 +15,13 @@ Cookie Cache is a sample retail application developed using Azure Service Fabric
 This is a stateless front-end web service using [ASP.NET Core in a Reliable Service](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-aspnetcore). This service demonstrates a basic front-end service that acts as a gateway for users into your application. It presents a multi-page application UI and an HTTP API to interact with the rest of the application. This is the only service that exposes an endpoint to the Internet for users to interact with, and all user ingress to the application comes through this service.
 #### Key concepts
  - Stateless public-facing ASP.NET Core service using WebListener
- - Communicating with other services in a variety of ways:
- - Over HTTP to another service using the Service Fabric Reverse Proxy
+ - Communicating with other services over HTTP to another service using the Service Fabric Proxy
  
 ### Stateful Backend Service
 This is a stateful back-end service using ASP.NET Core. This service demonstrates the use of [Reliable Collections](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-reliable-collections) in a stateful service. It presents an internal-only HTTP API for other services to interact with.
 
 #### Key concepts
- - Stateful internal-only ASP.NET Core service using Kestrel
+ - Stateful internal-only ASP.NET Core service
  - Reliable Collections
  - Dependency injection of IReliableStateManager for use in MVC controllers
 
