@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="css/OrderStyle.css" media="screen" />
+<script src="/js/site.js"></script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <meta charset="utf-8" />
+    <title>Cart</title>
+</head>
+<body onload=" getOrLoadUser(); updateCart();">
+    <div class="mainBigHeadings"><h1>Cookie Cart</h1></div>
+    <h1 id="deletedCart"></h1>
+    <h1 id="emptyCart"></h1>
+    <h2 id="userID"></h2>
+    <div>
+        <ul class="navbar">
+            <li class="navbar"><a class="nav" href="CookieCache.html">Cookie Cache</a></li>
+            <li class="navbar"><a class="nav" href="HomePage.html">Home</a></li>
+            <li class="navbar"><a class="nav" href="CartPage.html">Cart</a></li>
+
+
+        </ul>
+    </div>
+    <p id="orderItems"></p>
+    <div>
+        <table id="cartTable">
+            <tr id="">
+                <th><h2>Flavor</h2></th>
+                <th><h2>Price Per Cookie</h2></th>
+                <th><h2>Quantity</h2></th>
+                <th><h2>Total Price</h2></th>
+                <!-- <th><h2>Remove</h2></th>-->
+            </tr>
+        
+            <!-- Using 1, 3, 5, and 7 as labels even though it is 1, 2, 3, and 4 to match with the algorithm in the updateCart() method-->
+         
+            <tr id="row1">
+                <th id="flavor1"></th>
+                <th id="price1"></th>
+                <th id="quantity1"></th>
+                <th id="totalPrice1"></th>
+                <!-- <th id="remove1"></th>-->
+            </tr>
+            <tr id="row3">
+                <th id="flavor3"></th>
+                <th id="price3"></th>
+                <th id="quantity3"></th>
+                <th id="totalPrice3"></th>
+                <!-- <th id="remove3"></th>-->
+            </tr>
+            <tr id="row5">
+                <th id="flavor5"></th>
+                <th id="price5"></th>
+                <th id="quantity5"></th>
+                <th id="totalPrice5"></th>
+                <!-- <th id="remove5"></th>-->
+            </tr>
+            <tr  id="row7">
+                <th id="flavor7"></th>
+                <th id="price7"></th>
+                <th id="quantity7"></th>
+                <th id="totalPrice7"></th>
+                <!-- <th id="remove7"></th> -->
+            </tr>
+        
+        </table>
+
+     <div>
+     <!--Your cart is currently empty, let's change that! -->
+            
+     </div>
+
+        <table>
+            <tr>
+                <th><h2>Total:</h2></th>
+                <th id="totalPrice">PRICE</th>
+            </tr>
+            <tr>
+                <th><h2>Tax:</h2></th>
+                <th id="taxOnTotal">TAX ON TOTAL</th>
+            </tr>
+            <tr>
+                <th><h2>Shipping:</h2></th>
+                <th id="shipping" value="5">$5.00</th>
+            </tr>
+            <tr>
+                <th><h2>Grand Total:</h2></th>
+                <th id="grandTotal">GRAND TOTAL</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <a href="CookieCache.html">Continue Shopping</a>
+        <a  onclick="placeOrder()"> Place Order</a>
+    </div>
+   
+    <image src="CookieLogo.png" alt="Picture of Cookie Cache Logo" style="width:380px;height:126.147px;"></image>
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="css/OrderStyle.css" media="screen" />
+<script src="/js/site.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <meta charset="utf-8" />
+    <title>Cookie Cache</title>
+</head>
+<body onload="getOrLoadUser()">
+    <div class="mainBigHeadings"><h1>Explore our Cookie Cache!</h1></div>
+    <h2 id="userID"></h2>
+
+    <h2 class="mainHeadings"> What kind of Cookie are you looking for? The chances that Cookie Cache has it are high!</h2>
+    <h3>Cookie Cache makes ordering cookies easy -- follow our 3 defined steps to add cookies to your cart with ease </h3>
+    <div>
+        <ul class="navbar">
+            <li class="navbar"><a class="nav" href="CookieCache.html">Cookie Cache</a></li>
+            <li class="navbar"><a class="nav" href="HomePage.html">Home</a></li>
+            <li class="navbar"><a class="nav" href="CartPage.html">Cart</a></li>
+            
+
+        </ul>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>Cookie Picture</th>
+            <th>Step 1: Pick Your Flavor</th>
+            <th>Step 2: Select Your Quantity</th>
+            <th>Step 3: Add to Your Cart</th>
+        </tr>
+        <tr>
+            <th><img src="Chocochip.jpg" alt="Picture of Chocolate Java Chip Cookie" style="width:128px;height:128px;"/></th>
+            <th><h2>Chocolate Java Chip <br /></h2>
+                <div>Bio: This chocolate chip cookie has a CS java flavor spun in. The notes of coffee and chocolate play well together and really showcase what a cookie 
+                should look like and taste like! <br /></div>
+                <div> What's in it? Unsalted butter, granulated white sugar, light brown sugar, eggs, vanilla, flour, baking soda, salt, chocolate java chips</div>
+               
+            </th>
+            <th>
+                Quantity drop down <br />
+                <form>
+                    <input id="quantityOfCookieCJC" type="number" name="quantityOfCookie" /><br />
+                </form>
+            </th>
+            <th>
+                <input id="AddItToYourCookieCart" type="button" value="Add it to your Cookie Cart!" onclick="addToCart('Chocolate Java Chip', document.getElementById('quantityOfCookieCJC').value);" />
+            </th>
+        </tr>
+        <tr>
+            <th><img src="PnutJam.jpg" alt="Picture of Peanut Butter Jam Cookie" style="width:128px;height:128px;"/></th>
+            <th>
+                <h2>Peanut Butter Jam <br /> </h2>
+                <div>Bio: This cookie is a one of a kind as it takes the classic school dayz favorite - peanut butter and jelly - and mashes it up into a cookie. With 
+                swirls of peanut butter and delicious homemade jam, this is sure to be a crowd pleaser! <br /></div>
+                <div>What's in it? Unsalted butter, granulated white sugar, peanut butter, grape jam, eggs, flour, baking soda, baking powder, salt</div>
+                
+            </th>
+            <th>
+                Quantity drop down <br />
+                <form>
+                    <input id="quantityOfCookiePBJ" type="number" name="quantityOfCookie" /><br />
+                </form>
+            </th>
+            <th>
+                <input id="AddItToYourCookieCart" type="button" value="Add it to your Cookie Cart!" onclick="addToCart('Peanut Butter Jam', document.getElementById('quantityOfCookiePBJ').value);" />
+            </th>
+        </tr>
+        <tr>
+            <th><img src="MMMadness.jpg" alt="Picture of M&M Madne$$ Cookie" style="width:128px;height:128px;"/></th>
+            <th>
+                <h2> M&M MADNE$$ <br /></h2>
+                <div>Bio: This cookie is pure MADNE$$ as it is loaded with M&M candies of all different shapes, sizes and flavors! You've heard of M&M cookies, but no one 
+                has been MAD enough to add peanut butter, peanut, dark chocolate, and pretzel M&Ms to a cookie all at once -- until Cookie Cache. This is a must try, and we 
+                promise you will only be a tiny bit MAD after consuming! <br /></div>
+                <div>What's in it? Sugar, water, salt, molasses, vanilla, butter, flour, baking soda, peanut M&Ms, peanut butter M&Ms, pretzel M&Ms, M&Ms, dark chocolate M&Ms</div>  
+            </th>
+            <th>
+                Quantity drop down <br />
+                <form>
+                    <input id="quantityOfCookieMM" type="number" name="quantityOfCookie" /><br />
+                </form>
+            </th>
+            <th>
+                <input id="AddItToYourCookieCart" type="button" value="Add it to your Cookie Cart!" onclick="addToCart('MM Madness', document.getElementById('quantityOfCookieMM').value);" />
+            </th>
+        </tr>
+        <tr>
+            <th><img src="LRUBluberry.jpg" alt="Picture of LRU-BLU-Berry" style="width:128px;height:128px;"/></th>
+            <th>
+                <h2> LRU-BLU-Berry <br /></h2>
+                <div>Bio: Although this classic cookie cache cookie name suggests it will be the least recently eaten out of your cookie jar that is far from the truth. 
+                With fresh blueberries and a hint of vanilla this cookie will have be most recently eaten at home or any party or event! <br /></div>
+                <div>What's in it? Flour, baking powder, salt, buter, white sugar, eggs, lemon, vanilla, milk, fresh organic blueberries locally sourced</div>
+                
+            </th>
+            <th>
+                Quantity drop down <br />
+                <form>
+                    <input id="quantityOfCookieLRU" type="number" name="quantityOfCookie" /><br />
+                </form>
+            </th>
+            <th>
+                <input id="AddItToYourCookieCart" type="button" value="Add it to your Cookie Cart!" onclick="addToCart('LRU BLU-berry', document.getElementById('quantityOfCookieLRU').value);" />
+            </th>
+        </tr>
+    </table>
+    <p id="cartItemDisplay"></p>
+    <input id="showInventory" type="button" value="Show the current inventory" onclick="showInventory();" />
+    <p id="currentInventory"></p>
+    <image src="CookieLogo.png" alt="Picture of Cookie Cache Logo" style="width:380px;height:126.147px;"></image>
+</body>
+</html>
