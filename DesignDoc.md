@@ -9,7 +9,7 @@ HTML, JavaScript, and CSS are used for the front end in this application.
 
 #### HTML
 The HTML serves as a way for the user to input information (i.e. type of cookies they are looking to order, quantity of cookie, order information, etc.). The core HTML files used in this project are: 
-- CartPage.html - This page is the cart page. This is the page where all the users cart contents are displayed (i.e. the products that are 
+- CartPage.html - This page is the cart page. This is the page where all the users cart contents are displayed (i.e. the products that the user adds to their cart). This page also allows a user to place the order. Currently the contents are just removed from inventory and the user is reset. * ** SF Challenge: ** Add on functionality that has the user input their shipping and billing information and then sends an email to the customer and the manufacturer informing them of the order ** 
 - CookieCache.html - This page serves as the ordering page. This page has information about each cookie that is for sale online, it has forms where users can add product to the cart by simply selecting a flavor, picking a quantity, and finally press a button to add it to the cart. The user will then see a pop-up that confirms that the product was added to the cart. 
 
 ### Scenario: Adding product to the Cart 
