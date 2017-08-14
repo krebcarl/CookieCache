@@ -18,10 +18,15 @@ div {
     width: 980;
 }
 
+.topTable{
+    border: none;
+    border-bottom: 2px;
+}
+
 .mainHeadings{
     font-weight: bold;
     font-size: medium;
-    color: salmon;
+    color: black;
 
 }
 

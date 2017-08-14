@@ -15,9 +15,6 @@ namespace Web1.Controllers
 
     public class ValuesController : Controller
     {
-        string flavor;
-        int quantity;
-
         /// <summary>
         /// This method is used to call the Stateful1.cs addToDic method which adds items to the user's cart.
         /// </summary>
@@ -30,14 +27,12 @@ namespace Web1.Controllers
         [HttpGet]
         public async Task<string> AddToCart(string flavor, int quantity, string userID)
         {
-            this.flavor = flavor;
-            this.quantity = quantity;
             string proxyResponse = "Not changed yet";
 
            IMyService flavService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
             {
-                proxyResponse = await flavService.addToDict(flavor, quantity, userID);
+                proxyResponse = await flavService.AddToDict(flavor, quantity, userID);
             }
             catch(Exception e)
             {
@@ -62,7 +57,7 @@ namespace Web1.Controllers
             IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
             {
-                inventoryString = await inventoryService.getInventoryString();
+                inventoryString = await inventoryService.GetInventoryString();
             }
             catch (Exception e)
             {
@@ -87,7 +82,7 @@ namespace Web1.Controllers
             IMyService placeOrderService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
             {
-                confirmString = await placeOrderService.deleteUser(userID);
+                confirmString = await placeOrderService.DeleteUser(userID);
             }
             catch (Exception e)
             {
@@ -121,8 +116,8 @@ namespace Web1.Controllers
             IMyService cartService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
             {
-               returnString = await cartService.getCartString(userID);
-                returnString = returnString + "|" + await cartService.getPriceString();
+               returnString = await cartService.GetCartString(userID);
+                returnString = returnString + "|" + await cartService.GetPriceString();
             }
             catch (Exception e)
             {

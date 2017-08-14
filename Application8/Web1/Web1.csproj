@@ -13,10 +13,12 @@
     <Content Include="wwwroot\css\OrderStyle.css" />
     <Content Include="wwwroot\HomePage.html" />
     <Content Include="wwwroot\js\site.js" />
+    <Content Include="wwwroot\js\test.js" />
     <Content Include="wwwroot\MembershipPost.html" />
     <Content Include="wwwroot\MembershipPre.html" />
     <Content Include="wwwroot\OrderConfirmationPage.html" />
     <Content Include="wwwroot\OrderingPage.html" />
+    <Content Include="wwwroot\test.html" />
     <Content Include="wwwroot\UserLogin.html" />
   </ItemGroup>
   <ItemGroup>

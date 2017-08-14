@@ -8,15 +8,15 @@ using Microsoft.ServiceFabric.Data.Collections;
 
 public interface IMyService : IService
 {
-    Task<string> addToDict(string flavor, int quantity, string userID);
-    Task<IReliableDictionary<string, int>> getCartItems(string userID);
-    Task<string> getInventoryString();
-    Task<string> getCartString(string userID);
-    Task<string> getPriceString();
-    Task<string> getOrCreateUserDictionaryName(string userID);
-    Task<string> createNewUserDictionary(string userID);
-    Task<string> deleteUser(string userID);
-    Task<string> deleteUserCart(string userID);
+    Task<string> AddToDict(string flavor, int quantity, string userID);
+    Task<IReliableDictionary<string, int>> GetCartItems(string userID);
+    Task<string> GetInventoryString();
+    Task<string> GetCartString(string userID);
+    Task<string> GetPriceString();
+    Task<string> GetOrCreateUserDictionaryName(string userID);
+    Task<string> CreateNewUserDictionary(string userID);
+    Task<string> DeleteUser(string userID);
+    Task<string> DeleteUserCart(string userID);
 
 
 
