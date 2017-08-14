@@ -1,6 +1,6 @@
 //for testing purposes only
 //overrides the alert so that there isn't any popping up when testing
-function alert(){}
+//function alert(){}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ function updateCart() {
 //this function goes and adds 
 function getOrLoadUser() {
     //checks to see if a cookie has already been set for the user
-    if (get_cookie("userID") == '' || get_cookie("userID") == undefined) {
+    if (get_cookie("userID") == '' || get_cookie("userID") == undefined || get_cookie("userID") == null) {
         set_cookie("userID", uuidv4(), 3); //if there isn't a cookie set for the user, set one
     } 
     var userID = get_cookie("userID");

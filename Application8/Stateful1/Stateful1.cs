@@ -42,6 +42,7 @@ namespace Stateful1
             string userOrderDictionaryPointerName = await GetOrCreateUserDictionaryName(userID);
             
             IReliableDictionary<string, int> userOrderDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, int>>(userOrderDictionaryPointerName);
+            await CleanUpCarts();
             
             using(var txn = this.StateManager.CreateTransaction())
             {
@@ -69,6 +70,11 @@ namespace Stateful1
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// This method is called in the AddToCart() method everytime that the AddToCart() method is called. This method is responsible for "cleaning up" the user cart dictionaries
+        /// that didn't proceed to the "place order" function. It checks the time stamp of the cart (when the user cart was created) with the current time stamp to see if it is less 
+        /// than 3 days. If so, it then adds the user cart contents back into inventory and deletes the user and the user cart.
+        /// </summary>
         public async Task CleanUpCarts()
         {
             //need to go through each entry in the active user dictionary and check the second part (timestamp) of the value to see if the cookie is expired
@@ -91,7 +97,7 @@ namespace Stateful1
                         string userID = enumerator.Current.Key;
                         //add things back to inventory
                         string[] cartThings = (await GetCartString(userID)).Split(',');
-                        for (int i = 0; i < cartThings.Length; i++)
+                        for (int i = 0; i < cartThings.Length/2; i = i +2)
                         {
                             if (cartThings[i] == "Chocolate Java Chip")
                             {
