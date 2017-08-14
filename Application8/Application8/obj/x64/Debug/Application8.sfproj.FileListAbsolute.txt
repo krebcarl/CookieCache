@@ -1,1 +1,2 @@
 c:\users\t-cakreb.redmond\documents\visual studio 2017\Projects\Application8\Application8\obj\x64\Debug\Application8.sfprojResolveAssemblyReference.cache
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Application8\obj\x64\Debug\Application8.sfprojResolveAssemblyReference.cache

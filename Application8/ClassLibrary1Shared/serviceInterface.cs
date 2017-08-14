@@ -17,26 +17,4 @@ public interface IMyService : IService
     Task<string> CreateNewUserDictionary(string userID);
     Task<string> DeleteUser(string userID);
     Task<string> DeleteUserCart(string userID);
-
-
-
-
 }
-
-//class MyService : StatelessService, IMyService
-//{
-//    //public MyService(StatelessServiceContext context)
-//    //    : base (context)
-//    //{
-//    //}
-
-//    //public Task HelloWorldAsync()
-//    //{
-//    //    return Task.FromResult("Hello!");
-//    //}
-
-//    //protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-//    //{
-//    //    return new[] { new ServiceInstanceListener(context =>            this.CreateServiceRemotingListener(context)) };
-//    //}
-//}

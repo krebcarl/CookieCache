@@ -25,3 +25,30 @@ C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\Sta
 C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Services.Remoting.xml
 C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\Stateful1\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\Stateful1\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Stateful1.exe.config
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Stateful1.exe
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Stateful1.pdb
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\ClassLibrary1Shared.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Data.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Data.Interfaces.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.FabricTransport.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Internal.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Internal.Strings.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Services.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Services.Remoting.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\System.Fabric.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\System.Fabric.Management.ServiceModel.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\System.Fabric.Management.ServiceModel.XmlSerializers.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\System.Fabric.Strings.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\ClassLibrary1Shared.pdb
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Data.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Data.Interfaces.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.FabricTransport.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Services.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Microsoft.ServiceFabric.Services.Remoting.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\bin\x64\Debug\System.Fabric.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\obj\x64\Debug\Stateful1.csprojResolveAssemblyReference.cache
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\obj\x64\Debug\Stateful1.exe
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\Stateful1\obj\x64\Debug\Stateful1.pdb

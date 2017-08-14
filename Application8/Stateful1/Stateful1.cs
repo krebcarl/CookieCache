@@ -205,7 +205,7 @@ namespace Stateful1
         /// This method adds a user to the user dictionary indicating they are an "active" user
         /// </summary>
         /// <param name="userID">GUID that is passed from the javaScript layer that identifies the user</param>
-        public async void AddUser(string userID)
+        public async Task AddUser(string userID)
         {
             using (var txn = this.StateManager.CreateTransaction())
             {

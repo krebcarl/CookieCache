@@ -2,18 +2,14 @@
 //overrides the alert so that there isn't any popping up when testing
 function alert(){}
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//This function adds a user specified cookie flavor and quantity to their shopping cart by checking accurate paramenters and then calls the AddToCart() method in ValuesController.cs
+//it then displays a message on the screen that confirms it recieved a stateless service hit and then returns what was added to the cart. If for some reason it fails, the function returns
+//a message describing what went wrong in the back end.
+//Parameters: flavor which is the user specified flavor (the flavors are hard coded into the HTML so users physically can't order an invalid flavor)
+//            quantity which is the user inputed quantity
 function addToCart(flavor, quantity) {
-    //var flavor = this.flavor;
-    //document.getElementById("chooseAFlavor").value;
-    //var quantity = this.quantity;
-        //document.getElementById("quantityOfCookie").value;
-    //var returnData; 
-
-    //if (flavor === "Choose a Flavor") {
-    //    alert("Please select a flavor");
-    //    return;
-    //} else
     if (quantity === null || quantity <= 0) {
         alert("Please Select a valid quantity");
         return "Not accurate quantity";
@@ -33,18 +29,20 @@ function addToCart(flavor, quantity) {
     http.send(null);
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//This function calls the inventoryToString
 function showInventory() {
     var http = new XMLHttpRequest();
     http.onreadystatechange = function () {
         if (http.readyState === 4) {
             document.getElementById('currentInventory').innerHTML = http.responseText;
-
         }
     };
-
     http.open("GET", "http://localhost:8742/api/values/inventoryToString", true); // true for asynchronous 
     http.send(null);
 }
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //inventory in this function refers to the contents in the users cart.
 function updateCart() {   
@@ -68,7 +66,6 @@ function updateCart() {
                 return;
             }
 
-
             var price = (twoStrings[1]).split(',');
             var maxflav = parseInt(inventory[0]);
             var flavString;
@@ -79,45 +76,6 @@ function updateCart() {
             var totalPrice = 0;
             var priceIndex = 1;
             var table = document.getElementById('cartTable');
-
-            //while (table.rows.length > 2) {
-            //    table.deleteRow(2)
-            //}
-
-            //var row;
-            //var flavorCell;
-            //var pricePerCookieCell;
-            //var quantityCell;
-            //var totalPriceCell;
-            //var removeCell;
-
-            //for (i = 1; i < inventory.length; i = i + 2) {
-            //    row = table.insertRow();
-            //    flavorCell = row.insertCell();
-            //    flavorCell.appendChild(inventory[i]);
-
-            //    pricePerCookieCell = row.insertCell();
-            //    for (j = 0; j < price.length; j++) {
-            //        if (inventory[i] == price[j]) {
-            //            priceIndex = j + 1;
-            //        }
-            //    }
-            //    pricePerCookieCell.appendChild(price[priceIndex]);
-
-            //    quantityCell = row.insertCell();
-            //    quantityCell.appendChild(inventory[i + 1]);
-
-            //    totalPriceCell = row.insertCell();
-            //    totalPricePerItem = parseFloat(price[priceIndex]) * parseFloat(inventory[i + 1]);
-            //    totalPriceCell.appendChild(totalPricePerItem);
-
-            //    removeCell = row.insertCell();
-            //    removeCell.appendChild("remove");
-
-            //    totalPrice = totalPrice + totalPricePerItem;
-
-            //}
-
 
             for (i = 1; i < inventory.length; i = i + 2){
                 flavString = "flavor" + i;
@@ -131,27 +89,18 @@ function updateCart() {
                         priceIndex = j + 1;
                     }
                 }
-
                 document.getElementById(priceString).innerHTML = "$" + parseFloat(price[priceIndex]).toFixed(2);
                 totalPricePerItem = parseFloat(price[priceIndex]) * parseFloat(inventory[i + 1]);
                 document.getElementById(totalString).innerHTML = "$" + totalPricePerItem.toFixed(2);
                 totalPrice = totalPrice + totalPricePerItem;
-
-                //var row = "row" + i;
-                //row.setattribute("hidden", false);
-
             }
-
-
             var taxOnTotal = totalPrice * .10;
             var grandTotal = taxOnTotal + totalPrice + 5;
             
-
             document.getElementById('totalPrice').innerHTML = "$" + totalPrice.toFixed(2);
             document.getElementById('taxOnTotal').innerHTML = "$" + taxOnTotal.toFixed(2);
             document.getElementById('grandTotal').innerHTML = "$" + grandTotal.toFixed(2);
             document.getElementById('orderItems').innerHTML = http.responseText;
-
         }
     };
 
@@ -160,6 +109,9 @@ function updateCart() {
     http.send(null);
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//this function goes and adds 
 function getOrLoadUser() {
     //checks to see if a cookie has already been set for the user
     if (get_cookie("userID") == '' || get_cookie("userID") == undefined) {
@@ -170,6 +122,8 @@ function getOrLoadUser() {
     return userID;
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // if you only want to set the cookie for your current domain, you can call it without the third parameter
 function set_cookie(cookie_name, cookie_value, lifespan_in_days, valid_domain) { 
     var domain_string = valid_domain ? ("; domain=" + valid_domain) : '';
@@ -177,6 +131,8 @@ function set_cookie(cookie_name, cookie_value, lifespan_in_days, valid_domain) {
         "; max-age=" + 60 * 60 * 24 * lifespan_in_days +
         "; path=/" + domain_string;
 } 
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //The following function allow you to easily get the cookie value you want by simply specifying the variable name
 function get_cookie(cookie_name) {
@@ -188,11 +144,15 @@ function get_cookie(cookie_name) {
     return '';
 } 
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 function delete_cookie(cookie_name, valid_domain) {
     // https://www.thesitewizard.com/javascripts/cookies.shtml
     var domain_string = valid_domain ? ("; domain=" + valid_domain) : '';
     document.cookie = cookie_name + "=; max-age=0; path=/" + domain_string;
 } 
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //creates a UUID
 function uuidv4() {
@@ -201,6 +161,8 @@ function uuidv4() {
         (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     );
 }
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //this function should:
 //1.delete the users cookies
@@ -230,8 +192,10 @@ function placeOrder() {
 
     http.open("GET", "http://localhost:8742/api/values/placeOrder/?userID=" + userID, true); // true for asynchronous 
     http.send(null);
-    //implement email things when time permits.
+    //implement emailing customer when time permits.
 }
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

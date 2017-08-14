@@ -20,3 +20,25 @@ C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\Cla
 C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\ClassLibrary1Shared\obj\Debug\ClassLibrary1Shared.csprojResolveAssemblyReference.cache
 C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\ClassLibrary1Shared\obj\Debug\ClassLibrary1Shared.dll
 C:\Users\t-cakreb.REDMOND\Documents\Visual Studio 2017\Projects\Application8\ClassLibrary1Shared\obj\Debug\ClassLibrary1Shared.pdb
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\ClassLibrary1Shared.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\ClassLibrary1Shared.pdb
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Data.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Data.Interfaces.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.FabricTransport.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Internal.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Internal.Strings.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Services.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Services.Remoting.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\System.Fabric.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\System.Fabric.Management.ServiceModel.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\System.Fabric.Management.ServiceModel.XmlSerializers.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\System.Fabric.Strings.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Data.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Data.Interfaces.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.FabricTransport.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Services.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\Microsoft.ServiceFabric.Services.Remoting.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\bin\Debug\System.Fabric.xml
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\obj\Debug\ClassLibrary1Shared.csprojResolveAssemblyReference.cache
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\obj\Debug\ClassLibrary1Shared.dll
+C:\Users\t-cakreb.REDMOND\projectCookie\CookieCache\Application8\ClassLibrary1Shared\obj\Debug\ClassLibrary1Shared.pdb

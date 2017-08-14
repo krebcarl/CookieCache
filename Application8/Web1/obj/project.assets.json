@@ -7694,10 +7694,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\t-cakreb.REDMOND\\Documents\\Visual Studio 2017\\Projects\\Application8\\Web1\\Web1.csproj",
+      "projectUniqueName": "C:\\Users\\t-cakreb.REDMOND\\projectCookie\\CookieCache\\Application8\\Web1\\Web1.csproj",
       "projectName": "Web1",
-      "projectPath": "C:\\Users\\t-cakreb.REDMOND\\Documents\\Visual Studio 2017\\Projects\\Application8\\Web1\\Web1.csproj",
-      "outputPath": "C:\\Users\\t-cakreb.REDMOND\\Documents\\Visual Studio 2017\\Projects\\Application8\\Web1\\obj\\",
+      "projectPath": "C:\\Users\\t-cakreb.REDMOND\\projectCookie\\CookieCache\\Application8\\Web1\\Web1.csproj",
+      "outputPath": "C:\\Users\\t-cakreb.REDMOND\\projectCookie\\CookieCache\\Application8\\Web1\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "net452"
@@ -7705,8 +7705,8 @@
       "frameworks": {
         "net452": {
           "projectReferences": {
-            "C:\\Users\\t-cakreb.REDMOND\\Documents\\Visual Studio 2017\\Projects\\Application8\\ClassLibrary1Shared\\ClassLibrary1Shared.csproj": {
-              "projectPath": "C:\\Users\\t-cakreb.REDMOND\\Documents\\Visual Studio 2017\\Projects\\Application8\\ClassLibrary1Shared\\ClassLibrary1Shared.csproj"
+            "C:\\Users\\t-cakreb.REDMOND\\projectCookie\\CookieCache\\Application8\\ClassLibrary1Shared\\ClassLibrary1Shared.csproj": {
+              "projectPath": "C:\\Users\\t-cakreb.REDMOND\\projectCookie\\CookieCache\\Application8\\ClassLibrary1Shared\\ClassLibrary1Shared.csproj"
             }
           }
         }
