@@ -33,6 +33,19 @@ C# and Service Fabric Reliable Collections are used for the backend of this appl
 Since there are multiple different programming languages that are used in this web application, there are certain protocols used to talk between the different parts (these are the lines that are drawn and identified in the diagram above).
 
 #### HTTP Requests
+An HTTP Request is used to talk between JavaScript and the different services in an application. In this application, HTTP requests are used in the site.js file to talk to and call methods in the Stateless Web Service ValuesController.c file. Below is a general implementation of an HTTP request that is used in the site.js file:
+
+```javascript
+   var http = new XMLHttpRequest();
+    http.onreadystatechange = function(){
+        if (http.readyState === 4) {
+           //write your logic/code here 
+        }
+    };
+
+    http.open("GET", "http://localhost:8742/api/values/AddToCart/?flavor=" + flavor + "&quantity=" + quantity + "&userID=" + userID, true); // true for asynchronous 
+    http.send(null);
+```
 
 #### Service Proxy
 Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows the most general implementation of a Service Proxy in a method in Web1/Controllers/ValuesController.cs:
