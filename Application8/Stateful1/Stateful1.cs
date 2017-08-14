@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Fabric;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Data.Collections;
@@ -67,6 +69,55 @@ namespace Stateful1
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        public async Task CleanUpCarts()
+        {
+            //need to go through each entry in the active user dictionary and check the second part (timestamp) of the value to see if the cookie is expired
+            using (var txn = this.StateManager.CreateTransaction())
+            {
+                IAsyncEnumerator<KeyValuePair<string, string>> enumerator = (await userDictionary.CreateEnumerableAsync(txn)).GetAsyncEnumerator();
+                while (await enumerator.MoveNextAsync(this.token))
+                {
+                    string wholevalue = enumerator.Current.Value;
+                    string[] splitValues = wholevalue.Split('|');
+                    string userTimeStamp = splitValues[1];
+                    DateTime userTime = DateTime.Parse(userTimeStamp, System.Globalization.CultureInfo.InvariantCulture);
+                    DateTime currentTime = DateTime.Now;
+
+
+                    TimeSpan diff = currentTime - userTime;
+                    //if the product has been in the cart for longer than 3 days
+                    if (diff.Days >= 3)
+                    {
+                        string userID = enumerator.Current.Key;
+                        //add things back to inventory
+                        string[] cartThings = (await GetCartString(userID)).Split(',');
+                        for (int i = 0; i < cartThings.Length; i++)
+                        {
+                            if (cartThings[i] == "Chocolate Java Chip")
+                            {
+                                await addChocolateChip(Int16.Parse(cartThings[i + 1]));
+                            }else if (cartThings[i] == "MM Madness")
+                            {
+                                await addMMMadness(Int16.Parse(cartThings[i + 1]));
+                            }else if(cartThings[i] == "LRU BLU-berry")
+                            {
+                                await addLRUBLU(Int16.Parse(cartThings[i + 1]));
+                            }
+                            else if (cartThings[i] == "Peanut Butter Jam")
+                            {
+                                await addPBJ(Int16.Parse(cartThings[i + 1]));
+                            }
+                        }
+                        //delete the user and the user cart
+                        await DeleteUser(userID);
+                        
+                    }
+                }
+                await txn.CommitAsync();
+            } 
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         /// <summary>
         /// This method is used to delete the user from the active user dictionary and then uses the helper method deleteUserCart to delete the user's cart.
@@ -211,7 +262,12 @@ namespace Stateful1
             {
                 if((await DoesUserExist(userID) ) == 0)
                 {
-                    await userDictionary.GetOrAddAsync(txn, userID, (await CreateNewUserDictionary(userID)));
+                    string firstPartOfValueInActiveUserDictionary = await CreateNewUserDictionary(userID);
+                    string secondPartOfValueInActiveUserDictionary = (DateTime.Now).ToString();
+                    string valueString = firstPartOfValueInActiveUserDictionary + "|" + secondPartOfValueInActiveUserDictionary;
+
+                    //creates a user dictionary pointer name (serves as the value in the active user dictionary) that is made up of a userID and then a timestamp
+                    await userDictionary.GetOrAddAsync(txn, userID, (valueString));
                     await txn.CommitAsync();
                 }
                 return;
@@ -254,11 +310,15 @@ namespace Stateful1
             {
                 if (DoesUserExist(userID).Result > 0)
                 {
-                    return (await userDictionary.TryGetValueAsync(txn, userID)).Value;
+                    //need to only return the first part (parse at |)
+                    string wholeValue = (await userDictionary.TryGetValueAsync(txn, userID)).Value;
+                    string[] splitValues = wholeValue.Split('|');
+                    string userDictionaryPointerName = splitValues[0];
+                    return userDictionaryPointerName;
                 }
                 else
                 {
-                    AddUser(userID);
+                    await AddUser(userID);
                     return await GetOrCreateUserDictionaryName(userID);
                 }
             }
@@ -371,6 +431,55 @@ namespace Stateful1
                     return true;
                 }
             }  
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        async Task addChocolateChip(int quantity)
+        {
+            string flavor = "Chocolate Java Chip";
+            using (var txn3 = this.StateManager.CreateTransaction())
+            {
+                await inventoryDictionary.AddOrUpdateAsync(txn3, flavor, quantity,
+                    (key, oldValue) => oldValue + quantity);
+                await txn3.CommitAsync();
+            }
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        async Task addMMMadness(int quantity)
+        {
+            string flavor = "MM Madness";
+            using (var txn3 = this.StateManager.CreateTransaction())
+            {
+                await inventoryDictionary.AddOrUpdateAsync(txn3, flavor, quantity,
+                    (key, oldValue) => oldValue + quantity);
+                await txn3.CommitAsync();
+            }
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        async Task addLRUBLU(int quantity)
+        {
+            string flavor = "LRU BLU-berry";
+            using (var txn3 = this.StateManager.CreateTransaction())
+            {
+                await inventoryDictionary.AddOrUpdateAsync(txn3, flavor, quantity,
+                    (key, oldValue) => oldValue + quantity);
+                await txn3.CommitAsync();
+            }
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        async Task addPBJ(int quantity)
+        {
+            string flavor = "Peanut Butter Jam";
+            using (var txn3 = this.StateManager.CreateTransaction())
+            {
+                await inventoryDictionary.AddOrUpdateAsync(txn3, flavor, quantity,
+                    (key, oldValue) => oldValue + quantity);
+                await txn3.CommitAsync();
+            }
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
