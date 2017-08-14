@@ -101,17 +101,17 @@ namespace Stateful1
                         {
                             if (cartThings[i] == "Chocolate Java Chip")
                             {
-                                await addChocolateChip(Int16.Parse(cartThings[i + 1]));
+                                await AddChocolateChip(Int16.Parse(cartThings[i + 1]));
                             }else if (cartThings[i] == "MM Madness")
                             {
-                                await addMMMadness(Int16.Parse(cartThings[i + 1]));
+                                await AddMMMadness(Int16.Parse(cartThings[i + 1]));
                             }else if(cartThings[i] == "LRU BLU-berry")
                             {
-                                await addLRUBLU(Int16.Parse(cartThings[i + 1]));
+                                await AddLRUBLU(Int16.Parse(cartThings[i + 1]));
                             }
                             else if (cartThings[i] == "Peanut Butter Jam")
                             {
-                                await addPBJ(Int16.Parse(cartThings[i + 1]));
+                                await AddPBJ(Int16.Parse(cartThings[i + 1]));
                             }
                         }
                         //delete the user and the user cart
@@ -441,7 +441,11 @@ namespace Stateful1
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        async Task addChocolateChip(int quantity)
+        /// <summary>
+        /// This method is used to add Chocolate Java Chip cookies to the inventory
+        /// </summary>
+        /// <param name="quantity">The quantity of cookies that need to be added back into inventory</param>
+        async Task AddChocolateChip(int quantity)
         {
             string flavor = "Chocolate Java Chip";
             using (var txn3 = this.StateManager.CreateTransaction())
@@ -453,7 +457,12 @@ namespace Stateful1
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        async Task addMMMadness(int quantity)
+        
+            /// <summary>
+        /// This method is used to add M&M Madness cookies to the inventory
+        /// </summary>
+        /// <param name="quantity">The quantity of cookies that need to be added back into inventory</param>
+        async Task AddMMMadness(int quantity)
         {
             string flavor = "MM Madness";
             using (var txn3 = this.StateManager.CreateTransaction())
@@ -465,7 +474,12 @@ namespace Stateful1
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        async Task addLRUBLU(int quantity)
+        
+        /// <summary>
+        /// This method is used to add LRU BLU-berry cookies to the inventory
+        /// </summary>
+        /// <param name="quantity">The quantity of cookies that need to be added back into inventory</param>
+        async Task AddLRUBLU(int quantity)
         {
             string flavor = "LRU BLU-berry";
             using (var txn3 = this.StateManager.CreateTransaction())
@@ -477,7 +491,12 @@ namespace Stateful1
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        async Task addPBJ(int quantity)
+        
+        /// <summary>
+        /// This method is used to add Peanut Butter Jam cookies to the inventory
+        /// </summary>
+        /// <param name="quantity">The quantity of cookies that need to be added back into inventory</param>
+        async Task AddPBJ(int quantity)
         {
             string flavor = "Peanut Butter Jam";
             using (var txn3 = this.StateManager.CreateTransaction())
