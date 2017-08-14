@@ -1,4 +1,7 @@
-## Cookixce Cache Design Document
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```## Cookixce Cache Design Document
 
 ## Design Overview
 Cookie Cache is a multi-service web application. This application consists of a Stateless Web Service and a Stateful Service that serves as the backend of the application. The basic architecture can be used for a variety of different simple web applications.
@@ -33,7 +36,7 @@ Since there is new
 
 #### Service Proxy
 Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows th
-'''javascript
+```javascript
 IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
             {
@@ -44,7 +47,7 @@ IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/A
                 Console.WriteLine(e.ToString());
                 return e.ToString();
             }
-'''
+```
 
 ## Scenario: Adding product to the Cart 
 Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart.
