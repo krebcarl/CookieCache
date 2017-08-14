@@ -20,12 +20,34 @@ The HTML serves as a way for the user to input information (i.e. type of cookies
 **SF Challenge:** Add on functionality that has the user input their shipping and billing information and then sends an email to the customer and the manufacturer informing them of the order. Framework for the HTML pages needed are included in the Web1/wwwroot folder (OrderConfirmationPage.html and CheckoutPAge.html)
 
 #### JavaScript
-The JavaScript serves as a mean to get information out of the HTML and then talk with the Stateless Web Service/Backend
+The JavaScript serves as a means to get information out of the HTML and then talk with the Stateless Web Service/Backend. There are two main JavaScript files that each serve a different purpose.
+
+- site.js - This is the main JavaScript file that is in charge of getting all the information needed out of the HTML. The file sends HTTP requests
 
 ## Back End
 C# and Service Fabric Reliable Collections are used for the backend of this application. 
 
+## Communication Between Services
+Since there is new
+#### HTTP Requests
+
+#### Service Proxy
+Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows th
+''' javascript
+IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
+            try
+            {
+                inventoryString = await inventoryService.GetInventoryString();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return e.ToString();
+            }
+'''
+
 ## Scenario: Adding product to the Cart 
+Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart.
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
 
 ## Misc. Design Details
