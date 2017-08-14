@@ -31,6 +31,7 @@ C# and Service Fabric Reliable Collections are used for the backend of this appl
 
 ## Communication Between Services
 Since there is new
+
 #### HTTP Requests
 
 #### Service Proxy
@@ -55,3 +56,6 @@ Below is a diagram showing the flow when a user presses the "Add To Cart" button
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
 
 ## Misc. Design Details
+#### Stateless Service Hit
+#### Inventory Display
+#### Application Manifest/ Manifest Files
