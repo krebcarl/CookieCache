@@ -22,7 +22,9 @@ The HTML serves as a way for the user to input information (i.e. type of cookies
 #### JavaScript
 The JavaScript serves as a means to get information out of the HTML and then talk with the Stateless Web Service/Backend. There are two main JavaScript files that each serve a different purpose.
 
-- site.js - This is the main JavaScript file that is in charge of getting all the information needed out of the HTML. The file sends HTTP requests
+- site.js - This is the main JavaScript file that is in charge of getting all the information needed out of the HTML. This file initially identifies the user by always making sure there is a cookie set for each user's ID. The file sends HTTP requests to talk to the Stateless Web Service in the backend. See section below on HTTP Requests for more information. 
+
+- test.js - This file contains tests for the application to ensure that things are working correctly when changes are being made to the code. To run tests, just navigate to *http://localhost:8742/test.html* and click the "Let's test it!" button. 
 
 ## Back End
 C# and Service Fabric Reliable Collections are used for the backend of this application. 
@@ -32,7 +34,8 @@ Since there is new
 #### HTTP Requests
 
 #### Service Proxy
-Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows th
+Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows the most general implementation of a Service Proxy in a method in Web1/Controllers/ValuesController.cs:
+
 ```javascript
 IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
@@ -45,7 +48,7 @@ IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/A
                 return e.ToString();
             }
 ```
-
+For more information about using Service Proxies check out 
 ## Scenario: Adding product to the Cart 
 Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart.
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
