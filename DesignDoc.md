@@ -1,4 +1,4 @@
-## Cookie Cache Design Document
+# Cookie Cache Design Document
 
 ## Design Overview
 Cookie Cache is a multi-service web application. This application consists of a Stateless Web Service and a Stateful Service that serves as the backend of the application. The basic architecture can be used for a variety of different simple web applications.
@@ -48,7 +48,8 @@ IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/A
                 return e.ToString();
             }
 ```
-For more information about using Service Proxies check out 
+For more information about using Service Proxies check out https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxy?view=azure-dotnet .
+
 ## Scenario: Adding product to the Cart 
 Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart.
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
