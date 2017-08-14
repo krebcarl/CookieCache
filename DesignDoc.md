@@ -46,7 +46,7 @@ An HTTP Request is used to talk between JavaScript and the different services in
     http.open("GET", "http://localhost:8742/api/values/AddToCart/?flavor=" + flavor + "&quantity=" + quantity + "&userID=" + userID, true); // true for asynchronous 
     http.send(null);
 ```
-
+For more information about using HTTP requests check out https://stackoverflow.com/questions/247483/http-get-request-in-javascript -OR- 
 #### Service Proxy
 Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows the most general implementation of a Service Proxy in a method in Web1/Controllers/ValuesController.cs:
 
