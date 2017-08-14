@@ -33,7 +33,7 @@ Since there is new
 
 #### Service Proxy
 Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows th
-''' javascript
+'''javascript
 IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/Application8/Stateful1"), new ServicePartitionKey(0));
             try
             {
