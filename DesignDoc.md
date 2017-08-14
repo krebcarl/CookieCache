@@ -17,7 +17,7 @@ The HTML serves as a way for the user to input information (i.e. type of cookies
 
 - CartPage.html - This page is the cart page. This is the page where all the users cart contents are displayed (i.e. the products that the user adds to their cart). This page also allows a user to place the order. Currently the contents are just removed from inventory and the user is reset. 
 
-**SF Challenge:** Add on functionality that has the user input their shipping and billing information and then sends an email to the customer and the manufacturer informing them of the order. Framework for the HTML pages needed are included in the Web1/wwwroot folder (OrderConfirmationPage.html and CheckoutPAge.html)
+***SF Challenge:*** Add on functionality that has the user input their shipping and billing information and then sends an email to the customer and the manufacturer informing them of the order. Framework for the HTML pages needed are included in the Web1/wwwroot folder (OrderConfirmationPage.html and CheckoutPAge.html)
 
 #### JavaScript
 The JavaScript serves as a means to get information out of the HTML and then talk with the Stateless Web Service/Backend. There are two main JavaScript files that each serve a different purpose.
