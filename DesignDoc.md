@@ -1,7 +1,4 @@
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```## Cookixce Cache Design Document
+## Cookie Cache Design Document
 
 ## Design Overview
 Cookie Cache is a multi-service web application. This application consists of a Stateless Web Service and a Stateful Service that serves as the backend of the application. The basic architecture can be used for a variety of different simple web applications.
