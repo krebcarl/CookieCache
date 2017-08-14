@@ -30,7 +30,7 @@ The JavaScript serves as a means to get information out of the HTML and then tal
 C# and Service Fabric Reliable Collections are used for the backend of this application. 
 
 ## Communication Between Services
-Since there is new
+Since there are multiple different programming languages that are used in this web application, there are certain protocols used to talk between the different parts (these are the lines that are drawn and identified in the diagram above).
 
 #### HTTP Requests
 
