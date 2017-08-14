@@ -1,6 +1,7 @@
 ## Cookie Cache Design Document
 
 ## Design Overview
+Cookie Cache is a multi-service web application. This application consists of a Stateless Web Service and a Stateful Service that serves as the backend of the application. The basic architecture can be used for a variety of different simple web applications.
 
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Design%20Flow%20Diagram.JPG "Log Title Text 2")
 
@@ -22,6 +23,7 @@ The HTML serves as a way for the user to input information (i.e. type of cookies
 The JavaScript serves as a mean to get information out of the HTML and then talk with the Stateless Web Service/Backend
 
 ### Back End
+C# and Service Fabric Reliable Collections are used for the backend of this application. 
 
 ### Scenario: Adding product to the Cart 
 
