@@ -5,7 +5,7 @@ Cookie Cache is a multi-service web application. This application consists of a 
 
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Design%20Flow%20Diagram.JPG "Log Title Text 2")
 
-### Front End
+## Front End
 HTML, JavaScript, and CSS are used for the front end in this application. 
 
 #### HTML
@@ -22,9 +22,10 @@ The HTML serves as a way for the user to input information (i.e. type of cookies
 #### JavaScript
 The JavaScript serves as a mean to get information out of the HTML and then talk with the Stateless Web Service/Backend
 
-### Back End
+## Back End
 C# and Service Fabric Reliable Collections are used for the backend of this application. 
 
-### Scenario: Adding product to the Cart 
+## Scenario: Adding product to the Cart 
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
-### Misc. Design Details
+
+## Misc. Design Details
