@@ -18,6 +18,8 @@ https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-se
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview-microservices
 
 ## HTTP requests
+https://www.tutorialspoint.com/http/http_overview.htm
+https://stackoverflow.com/questions/247483/http-get-request-in-javascript
 
 ## Service Proxy
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxy?view=azure-dotnet
