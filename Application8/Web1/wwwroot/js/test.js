@@ -1,12 +1,12 @@
 ﻿function runTests() {
     document.getElementById('writeTestTextHere').innerHTML += "<br/>" + "Starting Tests now!" + "<br/>";
-    test1();
-    test2();
-    test3();
-    test4();
-    test5();
-    test6();
-    test7();
+    test1(); //checks that peanut butter jam cookies can be added to the cart
+    test2(); //checks that chocolate java chip cookies can be added to the cart
+    test3(); //checks that MM Madness cookies can be added to the cart
+    test4(); //checks that LRU BLU-berry cookies can be added to the cart 
+    test5(); //Testing that a valid quantity (0 case) is required 
+    test6(); //Testing that a valid quantity (null case) is required 
+    test7(); //Testing that a valid quantity (negative case) is required 
     //test8();
     //test9();
 }
