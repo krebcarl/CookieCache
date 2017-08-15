@@ -11,7 +11,7 @@ HTML, JavaScript, and CSS are used for the front end in this application.
 #### HTML
 The HTML serves as a way for the user to input information (i.e. type of cookies they are looking to order, quantity of cookie, order information, etc.). The core HTML files used in this project are: 
 
-- HomePage.html - This is the home page for the Cookie Cache web application. This page doesn't have much functionality, but it allows users to navigate to other parts of the web application. One important thing to note is that there is a GUIID in blue on the top of this page and others that you navigate to. This is the userID that identifies the user and is used to identify the correct dictionary that hold the user's cart contents. The userID is a associated with a cookie that is set when the page is loaded.
+- HomePage.html - This is the home page for the Cookie Cache web application. This page doesn't have much functionality, but it allows users to navigate to other parts of the web application. One important thing to note is that there is a GUID in blue on the top of this page and others that you navigate to. This is the userID that identifies the user and is used to identify the correct dictionary that hold the user's cart contents. The userID is a associated with a cookie that is set when the page is loaded.
 
 - CookieCache.html - This page serves as the ordering page. This page has information about each cookie that is for sale online, it has forms where users can add product to the cart by simply selecting a flavor, picking a quantity, and finally press a button to add it to the cart. The user will then see a pop-up that confirms that the product was added to the cart. 
 
@@ -27,7 +27,25 @@ The JavaScript serves as a means to get information out of the HTML and then tal
 - test.js - This file contains tests for the application to ensure that things are working correctly when changes are being made to the code. To run tests, just navigate to *http://localhost:8742/test.html* and click the "Let's test it!" button. 
 
 ## Back End
-C# and Service Fabric Reliable Collections are used for the backend of this application. 
+C# and Service Fabric Reliable Collections are used for the backend of this application. The two main files that serve as the backend in this application are ValuesController.cs and Stateful1.cs.
+
+#### Stateless Web Service
+Cookie Cache has one Stateless Web Service called ValuesController.cs. This file contains the code that is used to talk to the Stateful Service through Service Proxies (see below for more information on Service Proxy). 
+
+Some key design features to note in this file are that in the AddToCart() method there is a "Stateless Service hit" message that is sent everytime the method is called. This is to help see where the information is being passed and how the flow works for the project.
+
+#### Stateful Service
+Cookie cache has one Stateful Service called Stateful1.cs. This file contains the majority of the functionality for the application including maintaining the data for each user's cart, managing inventory, and managing all of the active users. 
+
+##### Reliable Dictionary
+To store all the information needed, Reliable Dictionaries are used. There are three main reliable dictionaries used in this application:
+
+- inventoryDictionary - this dictionary keeps track of the product inventory which is initialized in the backend once the application is started. The key for this dictionary is the flavor of the cookie and the value is the quantity in inventory. (i.e. KEY: Chocolate Java Chip VALUE: 5000)
+
+- userDictionary - this dictionary keeps track of all the *active* users who have a shopping cart. A user is assigned a web cookie when they navigate to the website initially (this can be seen on the top of any of the main pages in a light blue/teal color) -- this cookie ID is not saved until the user adds something to their shopping cart. It is only then when they are added to the active userDictionary and have a shopping cart created and initialized for them. The key for this dictionary is the GUID cookie and the value is a random string that serves as a pointer to the user's shopping cart dictionary and a time stamp that is used to clean up shoppping carts when the orders are not placed. (i.e. KEY: 7513752d-e7fd-4a44-8c9a-80364e98b2e9 VALUE: 0f8fad5b-d9cb-469f-a165-70867728950e|5/1/2008 8:30:52 AM)
+
+- priceDictionary - this dictioanry is 
+
 
 ## Communication Between Services
 Since there are multiple different programming languages that are used in this web application, there are certain protocols used to talk between the different parts (these are the lines that are drawn and identified in the diagram above).
@@ -46,7 +64,8 @@ An HTTP Request is used to talk between JavaScript and the different services in
     http.open("GET", "http://localhost:8742/api/values/AddToCart/?flavor=" + flavor + "&quantity=" + quantity + "&userID=" + userID, true); // true for asynchronous 
     http.send(null);
 ```
-For more information about using HTTP requests check out https://stackoverflow.com/questions/247483/http-get-request-in-javascript -OR- 
+For more information about using HTTP requests check out https://stackoverflow.com/questions/247483/http-get-request-in-javascript 
+
 #### Service Proxy
 Service Proxies are used to talk between services. In this application, a service proxy is required whenever the Stateless Web Service needs information or wants to call a method that lives in the Stateful Service. Below is a code snip-it that shows the most general implementation of a Service Proxy in a method in Web1/Controllers/ValuesController.cs:
 
