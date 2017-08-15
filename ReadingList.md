@@ -1,4 +1,3 @@
-
 # Recommended Reading List for CookieCache
 
 ## Azure
@@ -11,6 +10,7 @@ https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview
 
 The link below is for a document that explains some basic service fabric terminology that would be helpful to have an understanding of as these terms are used commonly throughout any other Service Fabric documentation. 
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-technical-overview
+
 ### Reliable Services
 This is a good link that talks about both Stateful and Stateless Services. Cookie Cache consists of two services -- one a stateless web service and the other a stateful service.
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-services-introduction
@@ -19,7 +19,7 @@ https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-se
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview-microservices
 
 ## HTTP requests
-HTTP requests are used in this application to talk between the JavaScript layer and the Stateless Web Service.
+HTTP requests are used in this application to talk between the JavaScript layer and the Stateless Web Service. Moew
 https://www.tutorialspoint.com/http/http_overview.htm
 https://stackoverflow.com/questions/247483/http-get-request-in-javascript
 
