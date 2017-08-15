@@ -1,3 +1,4 @@
+
 # Recommended Reading List for CookieCache
 
 ## Azure
@@ -18,10 +19,12 @@ https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-se
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-overview-microservices
 
 ## HTTP requests
+HTTP requests are used in this application to talk between the JavaScript layer and the Stateless Web Service.
 https://www.tutorialspoint.com/http/http_overview.htm
 https://stackoverflow.com/questions/247483/http-get-request-in-javascript
 
 ## Service Proxy
+Service Proxy is used in this application to talk between the Stateless Web Service and the Stateful Service. The link below has more information on the topic.
 https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxy?view=azure-dotnet
 
 ## Reliable Collections
