@@ -10,7 +10,7 @@ author: cakreb
 This repository contains an introductory sample project for [Microsoft Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) highlighting the use of Reliable Collections. The sample project contains a single application with two services (one stateful and one stateless) demonstrating the basic concepts needed to get you started building highly-available, scalable, distributed applications.
 
 ## About this sample application
-Cookie Cache is a sample retail application developed using Azure Service Fabric that demonstrates the features Service Fabric offers and showcases their uses. The sample retail application will allow customers to place and purchase orders to demonstrate the ease and benefits of using Service Fabric to create a web application. Cookie Cache will be an example of how ecommerce web applications can look when built on Service Fabric. Since it is easier to build out a retail application that has a specific purpose, this sample will be for an arbitrary company that will sell cookies. The company name is “Cookie Cache”. 
+Cookie Cache is a sample retail application developed using Azure Service Fabric that demonstrates the features Service Fabric offers and showcases their uses. The sample retail application will allow customers to place and purchase orders to demonstrate the ease and benefits of using Service Fabric to create a web application. Cookie Cache will be an example of how ecommerce web applications can look when built on Service Fabric. Since it is easier to build out a retail application that has a specific purpose, this sample will be for an arbitrary company that will sell cookies. The company name is “Cookie Cache”. To learn more about the design choices and implementation it is encouraged you read the DesignDoc.md file.
 ### Web Service
 This is a stateless front-end web service using [ASP.NET Core in a Reliable Service](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-aspnetcore). This service demonstrates a basic front-end service that acts as a gateway for users into your application. It presents a multi-page application UI and an HTTP API to interact with the rest of the application. This is the only service that exposes an endpoint to the Internet for users to interact with, and all user ingress to the application comes through this service.
 #### Key concepts
@@ -40,8 +40,7 @@ To deploy on the local cluster, you can simply hit F5 to debug the sample. If yo
 ## Other useful resources
  
  - Reading List
- - Application Architecture
- - Implementing a new additional feature
+ - DesignDoc.md 
 
 ---
 *This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.*
