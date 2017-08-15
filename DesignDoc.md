@@ -32,6 +32,7 @@ C# and Service Fabric Reliable Collections are used for the backend of this appl
 #### Stateless Web Service
 Cookie Cache has one Stateless Web Service called ValuesController.cs. This file contains the code that is used to talk to the Stateful Service through Service Proxies (see below for more information on Service Proxy). 
 
+
 Some key design features to note in this file are that in the AddToCart() method there is a "Stateless Service hit" message that is sent everytime the method is called. This is to help see where the information is being passed and how the flow works for the project.
 
 #### Stateful Service
@@ -84,7 +85,9 @@ IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/A
 For more information about using Service Proxies check out https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxy?view=azure-dotnet .
 
 ## Scenario: Adding product to the Cart 
-Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart. **NOTE:** When the Add To Cart button is pressed, an HTTP request is sent in the JavaScript to the Stateless Service and then the Stateless Service is sending a service proxy to the Stateful Service where all of the checking, verification, and adding to the cart is done. 
+Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart. 
+
+**NOTE:** When the Add To Cart button is pressed, an HTTP request is sent in the JavaScript to the Stateless Service and then the Stateless Service is sending a service proxy to the Stateful Service where all of the checking, verification, and adding to the cart is done. 
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
 
 
