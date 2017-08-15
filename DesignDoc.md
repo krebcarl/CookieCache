@@ -40,11 +40,11 @@ Cookie cache has one Stateful Service called Stateful1.cs. This file contains th
 ##### Reliable Dictionary
 To store all the information needed, Reliable Dictionaries are used. There are three main reliable dictionaries used in this application:
 
-- inventoryDictionary - this dictionary keeps track of the product inventory which is initialized in the backend once the application is started. The key for this dictionary is the flavor of the cookie and the value is the quantity in inventory. (i.e. KEY: Chocolate Java Chip VALUE: 5000)
+- inventoryDictionary - this dictionary keeps track of the product inventory which is initialized in the backend once the application is started. The inventory can be viewed on the CookieCache.html page by pressing the "Show the current inventory" button. The key for this dictionary is the flavor of the cookie and the value is the quantity in inventory. (i.e. KEY: Chocolate Java Chip VALUE: 5000)
 
 - userDictionary - this dictionary keeps track of all the *active* users who have a shopping cart. A user is assigned a web cookie when they navigate to the website initially (this can be seen on the top of any of the main pages in a light blue/teal color) -- this cookie ID is not saved until the user adds something to their shopping cart. It is only then when they are added to the active userDictionary and have a shopping cart created and initialized for them. The key for this dictionary is the GUID cookie and the value is a random string that serves as a pointer to the user's shopping cart dictionary and a time stamp that is used to clean up shoppping carts when the orders are not placed. (i.e. KEY: 7513752d-e7fd-4a44-8c9a-80364e98b2e9 VALUE: 0f8fad5b-d9cb-469f-a165-70867728950e|5/1/2008 8:30:52 AM)
 
-- priceDictionary - this dictioanry is 
+- priceDictionary - this dictionary keeps track of the product prices that is passed to help aid in doing calculations in the JavaScript layer. The key for this dictionary is the flavor of the cookie and the value is the price. (i.e. KEY: MM Madness VALUE: 3.23) 
 
 
 ## Communication Between Services
@@ -84,10 +84,9 @@ IMyService inventoryService = ServiceProxy.Create<IMyService>(new Uri("fabric:/A
 For more information about using Service Proxies check out https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxy?view=azure-dotnet .
 
 ## Scenario: Adding product to the Cart 
-Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart.
+Below is a diagram showing the flow when a user presses the "Add To Cart" button on the CookieCache.html page to add something to their cart. **NOTE:** When the Add To Cart button is pressed, an HTTP request is sent in the JavaScript to the Stateless Service and then the Stateless Service is sending a service proxy to the Stateful Service where all of the checking, verification, and adding to the cart is done. 
 ![alt text](https://github.com/krebcarl/CookieCache/blob/carly1/Add%20to%20Cart%20Design%20Flow%20Diagram.JPG "Log Title Text 2")
 
+
 ## Misc. Design Details
-#### Stateless Service Hit
-#### Inventory Display
 #### Application Manifest/ Manifest Files
