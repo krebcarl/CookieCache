@@ -38,11 +38,13 @@ namespace Stateful1
         /// <returns>Returns a message that indicated the success or failure of adding something to their cart. </returns>
         public async Task<string> AddToDict(string flavor, int quantity, string userID)
         {
+            await CleanUpCarts();
+
             //gets or creates a user dictionary based on the userID
             string userOrderDictionaryPointerName = await GetOrCreateUserDictionaryName(userID);
             
             IReliableDictionary<string, int> userOrderDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, int>>(userOrderDictionaryPointerName);
-            await CleanUpCarts();
+            
             
             using(var txn = this.StateManager.CreateTransaction())
             {
@@ -77,9 +79,17 @@ namespace Stateful1
         /// </summary>
         public async Task CleanUpCarts()
         {
+            
             //need to go through each entry in the active user dictionary and check the second part (timestamp) of the value to see if the cookie is expired
             using (var txn = this.StateManager.CreateTransaction())
             {
+                //check to see if there are actually active users
+                var isEmpty = await userDictionary.GetCountAsync(txn);
+                if (isEmpty <= 0)
+                {
+                    return;
+                }
+
                 IAsyncEnumerator<KeyValuePair<string, string>> enumerator = (await userDictionary.CreateEnumerableAsync(txn)).GetAsyncEnumerator();
                 while (await enumerator.MoveNextAsync(this.token))
                 {
@@ -92,7 +102,7 @@ namespace Stateful1
 
                     TimeSpan diff = currentTime - userTime;
                     //if the product has been in the cart for longer than 3 days
-                    if (diff.Days >= 3)
+                    if (diff.Days >= 0) //change to 0 for testing purposes
                     {
                         string userID = enumerator.Current.Key;
                         //add things back to inventory

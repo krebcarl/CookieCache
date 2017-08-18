@@ -1,6 +1,6 @@
 //for testing purposes only
 //overrides the alert so that there isn't any popping up when testing
-//function alert(){}
+function alert(){}
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

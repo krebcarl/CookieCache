@@ -9,6 +9,7 @@
     test7(); //Testing that a valid quantity (negative case) is required 
     //test8();
     //test9();
+    test10();
 }
 
 function test1() {
@@ -210,3 +211,59 @@ function test7() {
 //    }
 //}
 
+
+//To run this test, you should go into the Statefl1.cs file and change on line 105 the 3 to 0 
+function test10() {
+    var userID = "userIDforTesting";
+    var flavor = "Chocolate Java Chip";
+    var quantity = 4;
+    var nextLine;
+
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+            helpertest10();
+            helpertest105();
+            helpertest10();
+            helpertest10();
+        }
+    };
+
+    http.open("GET", "http://localhost:8742/api/values/AddToCart/?flavor=" + flavor + "&quantity=" + quantity + "&userID=" + userID, true); // true for asynchronous 
+    http.send(null);
+}
+
+//will display the inventory
+function helpertest10() {
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+            document.getElementById('writeTestTextHere').innerHTML += http.responseText;
+            document.getElementById('writeTestTextHere').innerHTML += "<br/>";
+            return;
+        }
+    };
+    http.open("GET", "http://localhost:8742/api/values/inventoryToString", true); // true for asynchronous 
+    http.send(null);
+}
+
+//adds something to the cart
+function helpertest105()
+{
+    var userID = "userIDforTesting";
+    var flavor = "Chocolate Java Chip";
+    var quantity = 10;
+    var nextLine;
+
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (http.readyState === 4) {
+            //return;
+        }
+    };
+
+    http.open("GET",
+        "http://localhost:8742/api/values/AddToCart/?flavor=" + flavor + "&quantity=" + quantity + "&userID=" + userID,
+        true); // true for asynchronous 
+    http.send(null);
+}
